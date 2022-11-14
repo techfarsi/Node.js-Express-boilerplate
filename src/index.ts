@@ -1,11 +1,22 @@
 require('dotenv').config()
 import express from 'express'
 import router from './routes/router'
+import dbInit from './db'
 const app = express()
-const port = process.env.PORT
+
+// Init database
+dbInit()
+
+// Body parsing Middleware
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.use('/', router)
 
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`)
-})
+try {
+  app.listen(process.env.PORT, () => {
+    return console.log(`App is listening at http://localhost:${process.env.PORT}`)
+  })
+} catch (error) {
+  console.log(`Error occurred: ${error.message}`)
+}
