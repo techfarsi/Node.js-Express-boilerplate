@@ -2,6 +2,8 @@
 A boilerplate for building production-ready RESTful APIs using Node.js, Express, Typescript, and PostgreSQL
 
 # Architecture
+
+```text
 ├─ test           // All the testing code in it
 ├─ dist          // Build version
 ├─ src
@@ -9,6 +11,6 @@ A boilerplate for building production-ready RESTful APIs using Node.js, Express,
 │  ├─ controllers   
 │  ├─ middlewares   
 │  ├─ routes     
-│  ├─ typings     
 │  ├─ services        
 │  ├─ utils        
+```
